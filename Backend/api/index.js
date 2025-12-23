@@ -1,8 +1,8 @@
 import express from "express";
 import cors from "cors";
 import { serve } from "inngest/express";
-import { inngest, functions } from "../lib/inngest.js";
-import { ENV } from "../lib/env.js";
+import { inngest, functions } from "../src/lib/inngest.js";
+import { ENV } from "../src/lib/env.js";
 
 const app = express();
 
@@ -17,7 +17,7 @@ app.use("/api/inngest", serve({
   functions,
 }));
 
-app.get("/health", (req, res) => {
+app.get("/api/health", (req, res) => {
   res.status(200).json({ message: "Server is running" });
 });
 
