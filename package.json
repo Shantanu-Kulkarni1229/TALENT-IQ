@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "build": "npm install --prefix Backend && npm install --prefix Frontend && npm run build --prefix Frontend",
-    "start" : "npm run start --prefix Backend"
+    "start": "npm run start --prefix Backend"
   },
   "repository": {
     "type": "git",
@@ -18,5 +18,8 @@
   "bugs": {
     "url": "https://github.com/Shantanu-Kulkarni1229/TALENT-IQ/issues"
   },
-  "homepage": "https://github.com/Shantanu-Kulkarni1229/TALENT-IQ#readme"
+  "homepage": "https://github.com/Shantanu-Kulkarni1229/TALENT-IQ#readme",
+  "dependencies": {
+    "inngest": "^3.48.1"
+  }
 }
