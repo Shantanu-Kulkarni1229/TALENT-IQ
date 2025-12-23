@@ -9,16 +9,20 @@ export const inngest = new Inngest({
 const syncUser = inngest.createFunction(
   { id: "sync-user" },
   { event: "clerk/user.created" },
-  async ({ event }) => {
-    await connectDB();
+  async ({ event, step }) => {
+    await step.run("connect-to-database", async () => {
+      await connectDB();
+    });
 
-    const { id, email_addresses, first_name, last_name, image_url } = event.data;
+    await step.run("create-user", async () => {
+      const { id, email_addresses, first_name, last_name, image_url } = event.data;
 
-    await User.create({
-      clerkId: id,
-      email: email_addresses[0]?.email_address,
-      name: `${first_name || ""} ${last_name || ""}`.trim(),
-      profileImage: image_url,
+      await User.create({
+        clerkId: id,
+        email: email_addresses[0]?.email_address,
+        name: `${first_name || ""} ${last_name || ""}`.trim(),
+        profileImage: image_url,
+      });
     });
   }
 );
@@ -26,9 +30,14 @@ const syncUser = inngest.createFunction(
 const deleteUserFromDB = inngest.createFunction(
   { id: "delete-user-from-db" },
   { event: "clerk/user.deleted" },
-  async ({ event }) => {
-    await connectDB();
-    await User.deleteOne({ clerkId: event.data.id });
+  async ({ event, step }) => {
+    await step.run("connect-to-database", async () => {
+      await connectDB();
+    });
+
+    await step.run("delete-user", async () => {
+      await User.deleteOne({ clerkId: event.data.id });
+    });
   }
 );
 
