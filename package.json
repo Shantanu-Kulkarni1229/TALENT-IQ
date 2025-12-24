@@ -3,6 +3,7 @@
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
+<<<<<<< HEAD
   "dependencies": {
     "acorn": "^8.15.0",
     "acorn-import-attributes": "^1.9.5",
@@ -76,6 +77,11 @@
  "scripts": {
     "build": "npm install --prefix backend && npm install --prefix frontend && npm run build --prefix frontend",
     "start": "npm run start --prefix backend"
+=======
+  "scripts": {
+    "build": "npm install --prefix Backend && npm install --prefix Frontend && npm run build --prefix Frontend",
+    "start": "npm run start --prefix Backend"
+>>>>>>> a0055a6fb31b0d51a114e974b8304ffa36a99dd5
   },
   "repository": {
     "type": "git",
@@ -88,5 +94,12 @@
   "bugs": {
     "url": "https://github.com/Shantanu-Kulkarni1229/TALENT-IQ/issues"
   },
+<<<<<<< HEAD
   "homepage": "https://github.com/Shantanu-Kulkarni1229/TALENT-IQ#readme"
+=======
+  "homepage": "https://github.com/Shantanu-Kulkarni1229/TALENT-IQ#readme",
+  "dependencies": {
+    "inngest": "^3.48.1"
+  }
+>>>>>>> a0055a6fb31b0d51a114e974b8304ffa36a99dd5
 }

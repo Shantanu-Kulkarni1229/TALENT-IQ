@@ -8,12 +8,13 @@ import path from "path";
 
 const app = express();
 const __dirname = path.resolve();
+const __dirname = path.resolve();
 //Middlewares
 app.use(express.json());
 // CREDENTIAL TRUE = ALLOWS COOKIES TO BE SENT
-app.use(cors({origin: ENV.CLIENT_URL , credentials: true}));
+app.use(cors({ origin: ENV.CLIENT_URL, credentials: true }));
 
-app.use("/api/inngest" , serve({
+app.use("/api/inngest", serve({
     client: inngest,
     functions
 }));

@@ -18,6 +18,10 @@
     "inngest": "^3.44.3",
     "mongoose": "^8.19.1",
     "nodemon": "^3.1.11",
+<<<<<<< HEAD
     "stream-chat": "^9.27.2"
+=======
+    "talent-iq": "file:.."
+>>>>>>> a0055a6fb31b0d51a114e974b8304ffa36a99dd5
   }
 }
